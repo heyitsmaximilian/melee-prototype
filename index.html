@@ -544,7 +544,7 @@
     margin-top: -336px;
     margin-left: -336px;
     border-radius: 50%;
-    opacity: 0.12;
+    opacity: 0.08;
     mix-blend-mode: overlay;
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 256px 256px;
@@ -553,15 +553,15 @@
   }
 
   @keyframes morphTexture {
-    0%   { border-radius: 58% 42% 45% 55% / 44% 56% 59% 41%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.12; }
-    12%  { border-radius: 45% 55% 58% 42% / 56% 41% 44% 59%; transform: scale(1.025) rotate(-3deg); background-position: -25px 20px; opacity: 0.13; }
-    25%  { border-radius: 55% 45% 38% 62% / 42% 60% 48% 52%; transform: scale(0.975) rotate(4deg); background-position: 30px -35px; opacity: 0.10; }
-    37%  { border-radius: 40% 60% 62% 38% / 60% 38% 55% 45%; transform: scale(1.03) rotate(-2deg); background-position: -40px -15px; opacity: 0.14; }
-    50%  { border-radius: 62% 38% 42% 58% / 38% 58% 42% 62%; transform: scale(0.98) rotate(5deg); background-position: 35px 30px; opacity: 0.11; }
-    62%  { border-radius: 38% 62% 55% 45% / 55% 42% 62% 38%; transform: scale(1.035) rotate(-4deg); background-position: -20px 40px; opacity: 0.15; }
-    75%  { border-radius: 52% 48% 38% 62% / 45% 62% 38% 55%; transform: scale(0.97) rotate(3deg); background-position: 40px -20px; opacity: 0.10; }
-    87%  { border-radius: 44% 56% 60% 40% / 62% 40% 56% 44%; transform: scale(1.025) rotate(-3deg); background-position: -30px -30px; opacity: 0.14; }
-    100% { border-radius: 58% 42% 45% 55% / 44% 56% 59% 41%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.12; }
+    0%   { border-radius: 58% 42% 45% 55% / 44% 56% 59% 41%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.08; }
+    12%  { border-radius: 45% 55% 58% 42% / 56% 41% 44% 59%; transform: scale(1.025) rotate(-3deg); background-position: -25px 20px; opacity: 0.09; }
+    25%  { border-radius: 55% 45% 38% 62% / 42% 60% 48% 52%; transform: scale(0.975) rotate(4deg); background-position: 30px -35px; opacity: 0.065; }
+    37%  { border-radius: 40% 60% 62% 38% / 60% 38% 55% 45%; transform: scale(1.03) rotate(-2deg); background-position: -40px -15px; opacity: 0.10; }
+    50%  { border-radius: 62% 38% 42% 58% / 38% 58% 42% 62%; transform: scale(0.98) rotate(5deg); background-position: 35px 30px; opacity: 0.075; }
+    62%  { border-radius: 38% 62% 55% 45% / 55% 42% 62% 38%; transform: scale(1.035) rotate(-4deg); background-position: -20px 40px; opacity: 0.10; }
+    75%  { border-radius: 52% 48% 38% 62% / 45% 62% 38% 55%; transform: scale(0.97) rotate(3deg); background-position: 40px -20px; opacity: 0.065; }
+    87%  { border-radius: 44% 56% 60% 40% / 62% 40% 56% 44%; transform: scale(1.025) rotate(-3deg); background-position: -30px -30px; opacity: 0.095; }
+    100% { border-radius: 58% 42% 45% 55% / 44% 56% 59% 41%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.08; }
   }
 
   /* ─── SUMMARY CARD (floating inside blob) ─── */
@@ -1975,6 +1975,16 @@
     currentSlide = (index + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
+
+    // Auto-play video when switching to video slide, pause when leaving
+    const video = document.querySelector('.video-container video');
+    if (video) {
+      if (currentSlide === 1) {
+        video.play().catch(() => {}); // autoplay may be blocked without user gesture
+      } else {
+        video.pause();
+      }
+    }
   }
 
   // ─── Touch/Swipe Support ───
