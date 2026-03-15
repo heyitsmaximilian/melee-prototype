@@ -347,6 +347,30 @@
     border-color: rgba(184, 255, 0, 0.03);
   }
 
+  .blob-orbit-3 {
+    width: 420px;
+    height: 420px;
+    transform: translate(-50%, -50%) rotate(35deg);
+    animation: orbitRotate 35s linear infinite;
+    border-color: rgba(139, 92, 246, 0.04);
+  }
+
+  .blob-orbit-4 {
+    width: 480px;
+    height: 480px;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    animation: orbitRotate 40s linear infinite reverse;
+    border-color: rgba(184, 255, 0, 0.025);
+  }
+
+  .blob-orbit-5 {
+    width: 540px;
+    height: 540px;
+    transform: translate(-50%, -50%) rotate(15deg);
+    animation: orbitRotate 45s linear infinite;
+    border-color: rgba(139, 92, 246, 0.03);
+  }
+
   /* Orbit dot markers */
   .orbit-dot {
     position: absolute;
@@ -357,8 +381,15 @@
     box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
   }
 
+  .orbit-dot.small { width: 3px; height: 3px; }
+
   .blob-orbit-1 .orbit-dot { top: 0; left: 50%; transform: translate(-50%, -50%); }
   .blob-orbit-2 .orbit-dot { bottom: 0; right: 15%; transform: translate(50%, 50%); background: rgba(184, 255, 0, 0.4); box-shadow: 0 0 8px rgba(184, 255, 0, 0.2); }
+  .blob-orbit-3 .orbit-dot:nth-child(1) { top: 0; left: 30%; transform: translate(-50%, -50%); background: rgba(139, 92, 246, 0.35); box-shadow: 0 0 6px rgba(139, 92, 246, 0.2); }
+  .blob-orbit-3 .orbit-dot:nth-child(2) { bottom: 10%; right: 0; transform: translate(50%, 50%); background: rgba(184, 255, 0, 0.3); box-shadow: 0 0 6px rgba(184, 255, 0, 0.15); }
+  .blob-orbit-4 .orbit-dot:nth-child(1) { top: 15%; right: 0; transform: translate(50%, -50%); background: rgba(139, 92, 246, 0.25); box-shadow: 0 0 6px rgba(139, 92, 246, 0.15); }
+  .blob-orbit-4 .orbit-dot:nth-child(2) { bottom: 0; left: 40%; transform: translate(-50%, 50%); background: rgba(184, 255, 0, 0.25); box-shadow: 0 0 6px rgba(184, 255, 0, 0.12); }
+  .blob-orbit-5 .orbit-dot { top: 50%; left: 0; transform: translate(-50%, -50%); background: rgba(139, 92, 246, 0.2); box-shadow: 0 0 5px rgba(139, 92, 246, 0.12); }
 
   @keyframes orbitRotate {
     from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -1210,7 +1241,7 @@
   .video-border-wrap {
     padding: 1.5px;
     border-radius: 21px;
-    background: linear-gradient(135deg, var(--neon-purple), rgba(139, 92, 246, 0.5), var(--neon-green), rgba(184, 255, 0, 0.5), var(--neon-purple));
+    background: linear-gradient(135deg, var(--neon-purple), rgba(139, 92, 246, 0.4), rgba(160, 120, 255, 0.6), rgba(139, 92, 246, 0.4), var(--neon-purple));
     display: inline-block;
     width: 100%;
   }
@@ -1395,7 +1426,7 @@
   }
 
   [data-theme="light"] .hero-glow {
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.03) 35%, transparent 55%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, rgba(139, 92, 246, 0.06) 35%, transparent 55%);
   }
 
   [data-theme="light"] nav::after {
@@ -1425,6 +1456,33 @@
 
   [data-theme="light"] .blob-texture {
     opacity: 0.06;
+  }
+
+  /* Light mode: diffuse glow behind the blob to make it pop */
+  [data-theme="light"] .slide-blob::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background:
+      radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(139, 92, 246, 0.08) 30%, transparent 60%),
+      radial-gradient(ellipse at 35% 40%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 65% 60%, rgba(184, 140, 255, 0.1) 0%, transparent 50%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  [data-theme="light"] .blob-outer {
+    opacity: 0.7;
+  }
+
+  [data-theme="light"] .blob-mid {
+    filter: blur(3px);
   }
 
   [data-theme="light"] .summary-card::before {
@@ -1471,8 +1529,13 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
 
+  [data-theme="light"] .carousel-dot {
+    background: rgba(0, 0, 0, 0.15);
+  }
+
   [data-theme="light"] .carousel-dot.active {
-    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+    background: var(--neon-purple);
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
   }
 
   [data-theme="light"] .orbit-dot {
@@ -1567,6 +1630,9 @@
     .blob-hotspot { width: 100px; height: 100px; }
     .blob-orbit-1 { width: 320px; height: 320px; }
     .blob-orbit-2 { width: 280px; height: 280px; }
+    .blob-orbit-3 { width: 360px; height: 360px; }
+    .blob-orbit-4 { width: 380px; height: 380px; }
+    .blob-orbit-5 { width: 400px; height: 400px; }
     .blob-green-1 { width: 120px; height: 120px; }
     .blob-green-2 { width: 80px; height: 80px; }
     .blob-purple-wisp { width: 100px; height: 100px; }
@@ -1687,6 +1753,9 @@
           <!-- Orbital rings -->
           <div class="blob-orbit blob-orbit-1"><div class="orbit-dot"></div></div>
           <div class="blob-orbit blob-orbit-2"><div class="orbit-dot"></div></div>
+          <div class="blob-orbit blob-orbit-3"><div class="orbit-dot"></div><div class="orbit-dot small"></div></div>
+          <div class="blob-orbit blob-orbit-4"><div class="orbit-dot small"></div><div class="orbit-dot small"></div></div>
+          <div class="blob-orbit blob-orbit-5"><div class="orbit-dot small"></div></div>
 
           <!-- Amorphous blob layers -->
           <div class="blob blob-outer"></div>
