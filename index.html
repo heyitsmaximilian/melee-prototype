@@ -16,8 +16,8 @@
     --surface: rgba(14, 14, 22, 0.8);
     --surface-border: rgba(255, 255, 255, 0.04);
     --surface-hover: rgba(26, 26, 40, 0.9);
-    --neon-green: rgb(197, 253, 128);
-    --neon-green-dim: rgba(197, 253, 128, 0.15);
+    --neon-green: rgb(72, 160, 30);
+    --neon-green-dim: rgba(72, 160, 30, 0.15);
     --neon-purple: #8b5cf6;
     --neon-purple-dim: rgba(139, 92, 246, 0.15);
     --border: rgba(255, 255, 255, 0.06);
@@ -332,16 +332,16 @@
   }
 
   .blob-orbit-1 {
-    width: 540px;
-    height: 540px;
+    width: 640px;
+    height: 640px;
     transform: translate(-50%, -50%) rotate(20deg);
     animation: orbitRotate 30s linear infinite;
     border-color: var(--orbit-ring);
   }
 
   .blob-orbit-2 {
-    width: 480px;
-    height: 480px;
+    width: 580px;
+    height: 580px;
     transform: translate(-50%, -50%) rotate(-10deg);
     animation: orbitRotate 25s linear infinite reverse;
     border-color: rgba(184, 255, 0, 0.03);
@@ -372,59 +372,60 @@
     left: 50%;
   }
 
-  /* Outermost — soft atmospheric haze */
+  /* Outermost — soft atmospheric haze, fades heavily at edges */
   .blob-outer {
-    width: 560px;
-    height: 560px;
+    width: 680px;
+    height: 680px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 25% 25%, var(--blob-outer-1) 0%, transparent 55%),
-      radial-gradient(ellipse at 75% 55%, var(--blob-outer-2) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 85%, rgba(120, 60, 220, 0.15) 0%, transparent 45%),
-      radial-gradient(ellipse at 65% 20%, rgba(200, 100, 255, 0.12) 0%, transparent 50%);
+      radial-gradient(ellipse at 25% 25%, var(--blob-outer-1) 0%, transparent 45%),
+      radial-gradient(ellipse at 75% 55%, var(--blob-outer-2) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 85%, rgba(120, 60, 220, 0.1) 0%, transparent 35%),
+      radial-gradient(ellipse at 65% 20%, rgba(200, 100, 255, 0.08) 0%, transparent 40%);
     border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
     animation: morph1 12s ease-in-out infinite;
-    filter: blur(6px);
+    filter: blur(12px);
+    opacity: 0.7;
   }
 
   /* Mid layer — denser, more saturated with color variation */
   .blob-mid {
-    width: 420px;
-    height: 420px;
+    width: 480px;
+    height: 480px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 55% 30%, var(--blob-mid-1) 0%, transparent 50%),
-      radial-gradient(ellipse at 30% 65%, var(--blob-mid-2) 0%, transparent 45%),
-      radial-gradient(ellipse at 70% 70%, rgba(180, 120, 255, 0.3) 0%, transparent 40%),
-      radial-gradient(ellipse at 40% 40%, rgba(220, 80, 200, 0.12) 0%, transparent 50%);
+      radial-gradient(ellipse at 55% 30%, var(--blob-mid-1) 0%, transparent 45%),
+      radial-gradient(ellipse at 30% 65%, var(--blob-mid-2) 0%, transparent 40%),
+      radial-gradient(ellipse at 70% 70%, rgba(180, 120, 255, 0.25) 0%, transparent 35%),
+      radial-gradient(ellipse at 40% 40%, rgba(220, 80, 200, 0.1) 0%, transparent 45%);
     border-radius: 58% 42% 37% 63% / 56% 59% 41% 44%;
     animation: morph2 10s ease-in-out infinite;
-    filter: blur(1px);
+    filter: blur(2px);
   }
 
   /* Inner core — bright, concentrated */
   .blob-core {
-    width: 300px;
-    height: 300px;
+    width: 340px;
+    height: 340px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 45% 42%, var(--blob-core-1) 0%, var(--blob-core-2) 35%, transparent 60%),
-      radial-gradient(ellipse at 60% 55%, rgba(210, 180, 255, 0.4) 0%, transparent 45%),
-      radial-gradient(ellipse at 35% 60%, rgba(120, 80, 255, 0.3) 0%, transparent 40%);
+      radial-gradient(ellipse at 45% 42%, var(--blob-core-1) 0%, var(--blob-core-2) 30%, transparent 55%),
+      radial-gradient(ellipse at 60% 55%, rgba(210, 180, 255, 0.35) 0%, transparent 40%),
+      radial-gradient(ellipse at 35% 60%, rgba(120, 80, 255, 0.25) 0%, transparent 35%);
     border-radius: 63% 37% 42% 58% / 44% 56% 44% 56%;
     animation: morph3 8s ease-in-out infinite;
   }
 
   /* Hot spot — brightest center point */
   .blob-hotspot {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     transform: translate(-50%, -55%);
     background:
-      radial-gradient(circle, var(--blob-hotspot) 0%, rgba(200, 170, 255, 0.3) 40%, transparent 65%);
+      radial-gradient(circle, var(--blob-hotspot) 0%, rgba(200, 170, 255, 0.25) 35%, transparent 60%);
     border-radius: 50%;
     animation: pulse 4s ease-in-out infinite;
-    filter: blur(8px);
+    filter: blur(10px);
   }
 
   /* Green accent wisps — brighter */
