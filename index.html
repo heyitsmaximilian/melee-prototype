@@ -1199,12 +1199,22 @@
     aspect-ratio: 3 / 2;
     border-radius: 20px;
     background: var(--surface);
-    border: 1px solid var(--surface-border);
+    border: 1.5px solid transparent;
+    background-clip: padding-box;
     overflow: hidden;
     position: relative;
     box-shadow:
       0 12px 48px var(--shadow-color),
       0 0 80px rgba(139, 92, 246, 0.06);
+  }
+
+  .video-container::after {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: 21px;
+    background: linear-gradient(135deg, var(--neon-purple), rgba(139, 92, 246, 0.4), var(--neon-green), rgba(184, 255, 0, 0.4), var(--neon-purple));
+    z-index: -1;
   }
 
   .video-container::before {
