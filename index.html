@@ -303,92 +303,108 @@
 
   /* Outermost — soft atmospheric haze */
   .blob-outer {
-    width: 520px;
-    height: 520px;
+    width: 560px;
+    height: 560px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 30% 30%, rgba(139, 92, 246, 0.28) 0%, transparent 60%),
-      radial-gradient(ellipse at 70% 60%, rgba(99, 50, 220, 0.22) 0%, transparent 55%),
-      radial-gradient(ellipse at 50% 80%, rgba(80, 40, 180, 0.12) 0%, transparent 50%);
+      radial-gradient(ellipse at 25% 25%, rgba(139, 92, 246, 0.35) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 55%, rgba(79, 40, 200, 0.28) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 85%, rgba(120, 60, 220, 0.15) 0%, transparent 45%),
+      radial-gradient(ellipse at 65% 20%, rgba(200, 100, 255, 0.12) 0%, transparent 50%);
     border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
     animation: morph1 12s ease-in-out infinite;
-    filter: blur(8px);
+    filter: blur(6px);
   }
 
-  /* Mid layer — denser, more saturated */
+  /* Mid layer — denser, more saturated with color variation */
   .blob-mid {
-    width: 400px;
-    height: 400px;
+    width: 420px;
+    height: 420px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 55% 35%, rgba(139, 92, 246, 0.6) 0%, transparent 55%),
-      radial-gradient(ellipse at 35% 65%, rgba(120, 70, 240, 0.4) 0%, transparent 50%),
-      radial-gradient(ellipse at 65% 70%, rgba(160, 100, 255, 0.25) 0%, transparent 45%);
+      radial-gradient(ellipse at 55% 30%, rgba(139, 92, 246, 0.7) 0%, transparent 50%),
+      radial-gradient(ellipse at 30% 65%, rgba(100, 50, 230, 0.5) 0%, transparent 45%),
+      radial-gradient(ellipse at 70% 70%, rgba(180, 120, 255, 0.3) 0%, transparent 40%),
+      radial-gradient(ellipse at 40% 40%, rgba(220, 80, 200, 0.12) 0%, transparent 50%);
     border-radius: 58% 42% 37% 63% / 56% 59% 41% 44%;
     animation: morph2 10s ease-in-out infinite;
-    filter: blur(2px);
+    filter: blur(1px);
   }
 
   /* Inner core — bright, concentrated */
   .blob-core {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 45% 45%, rgba(170, 130, 255, 0.85) 0%, rgba(139, 92, 246, 0.45) 40%, transparent 65%),
-      radial-gradient(ellipse at 60% 55%, rgba(200, 170, 255, 0.35) 0%, transparent 50%);
+      radial-gradient(ellipse at 45% 42%, rgba(180, 140, 255, 0.9) 0%, rgba(139, 92, 246, 0.5) 35%, transparent 60%),
+      radial-gradient(ellipse at 60% 55%, rgba(210, 180, 255, 0.4) 0%, transparent 45%),
+      radial-gradient(ellipse at 35% 60%, rgba(120, 80, 255, 0.3) 0%, transparent 40%);
     border-radius: 63% 37% 42% 58% / 44% 56% 44% 56%;
     animation: morph3 8s ease-in-out infinite;
-    filter: blur(1px);
   }
 
   /* Hot spot — brightest center point */
   .blob-hotspot {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     transform: translate(-50%, -55%);
-    background: radial-gradient(circle, rgba(230, 215, 255, 0.7) 0%, rgba(180, 150, 255, 0.25) 50%, transparent 70%);
+    background:
+      radial-gradient(circle, rgba(240, 225, 255, 0.75) 0%, rgba(200, 170, 255, 0.3) 40%, transparent 65%);
     border-radius: 50%;
     animation: pulse 4s ease-in-out infinite;
-    filter: blur(6px);
+    filter: blur(8px);
   }
 
-  /* Green accent wisps */
+  /* Green accent wisps — brighter */
   .blob-green-1 {
-    width: 180px;
-    height: 180px;
-    top: 15%;
-    left: 8%;
+    width: 200px;
+    height: 200px;
+    top: 12%;
+    left: 5%;
     transform: none;
-    background: radial-gradient(circle, rgba(184, 255, 0, 0.14) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(184, 255, 0, 0.18) 0%, transparent 65%);
     border-radius: 50%;
     animation: float1 7s ease-in-out infinite;
-    filter: blur(18px);
+    filter: blur(16px);
   }
 
   .blob-green-2 {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     top: 72%;
-    left: 68%;
+    left: 70%;
     transform: none;
-    background: radial-gradient(circle, rgba(184, 255, 0, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(184, 255, 0, 0.14) 0%, transparent 65%);
     border-radius: 50%;
     animation: float2 9s ease-in-out infinite;
+    filter: blur(12px);
+  }
+
+  /* Secondary purple wisp — warmer, adds depth */
+  .blob-purple-wisp {
+    width: 160px;
+    height: 160px;
+    top: 68%;
+    left: 8%;
+    transform: none;
+    background: radial-gradient(circle, rgba(180, 80, 220, 0.14) 0%, transparent 65%);
+    border-radius: 50%;
+    animation: float3 11s ease-in-out infinite;
     filter: blur(14px);
   }
 
-  /* Secondary purple wisp */
-  .blob-purple-wisp {
-    width: 140px;
-    height: 140px;
-    top: 65%;
-    left: 10%;
+  /* Warm accent — adds color richness */
+  .blob-warm {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 72%;
     transform: none;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 100, 150, 0.08) 0%, transparent 65%);
     border-radius: 50%;
-    animation: float3 11s ease-in-out infinite;
-    filter: blur(16px);
+    animation: float4 13s ease-in-out infinite;
+    filter: blur(18px);
   }
 
   /* Noise texture overlay for depth */
@@ -396,10 +412,10 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    opacity: 0.35;
+    opacity: 0.3;
     mix-blend-mode: overlay;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 128px 128px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
     pointer-events: none;
   }
 
@@ -408,40 +424,41 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-2deg);
+    transform: translate(-50%, -50%) rotate(-1.5deg);
     width: 280px;
     z-index: 5;
-    background: rgba(10, 8, 20, 0.6);
-    backdrop-filter: blur(32px) saturate(1.3);
-    -webkit-backdrop-filter: blur(32px) saturate(1.3);
-    border: 1px solid rgba(139, 92, 246, 0.15);
-    border-radius: 16px;
-    padding: 28px 24px;
+    background: rgba(12, 10, 24, 0.55);
+    backdrop-filter: blur(40px) saturate(1.5);
+    -webkit-backdrop-filter: blur(40px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 24px 22px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     animation: cardFloat 6s ease-in-out infinite;
     box-shadow:
-      0 8px 40px rgba(0, 0, 0, 0.5),
-      0 0 80px rgba(139, 92, 246, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      0 12px 48px rgba(0, 0, 0, 0.6),
+      0 0 100px rgba(139, 92, 246, 0.1),
+      0 0 0 1px rgba(139, 92, 246, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+  }
+
+  /* Subtle gradient sheen on the card */
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, transparent 40%, rgba(139, 92, 246, 0.03) 100%);
+    pointer-events: none;
   }
 
   .summary-card .sc-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-
-  .summary-card .sc-logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .summary-card .sc-logo img {
-    height: 16px;
-    width: auto;
-    object-fit: contain;
+    justify-content: flex-end;
   }
 
   .summary-card .sc-badge {
@@ -572,6 +589,12 @@
     0%, 100% { transform: translate(0, 0); }
     40% { transform: translate(15px, -10px); }
     80% { transform: translate(-10px, 20px); }
+  }
+
+  @keyframes float4 {
+    0%, 100% { transform: translate(0, 0); }
+    35% { transform: translate(-12px, 15px); }
+    70% { transform: translate(8px, -8px); }
   }
 
   @keyframes cardFloat {
@@ -1250,12 +1273,12 @@
           <div class="blob blob-green-1"></div>
           <div class="blob blob-green-2"></div>
           <div class="blob blob-purple-wisp"></div>
+          <div class="blob blob-warm"></div>
           <div class="blob-texture"></div>
 
           <!-- Alpha Summary Card preview -->
           <div class="summary-card">
             <div class="sc-header">
-              <div class="sc-logo"><img src="melee-logo-full.png" alt="Melee"></div>
               <div class="sc-badge">Alpha Recap</div>
             </div>
             <div class="sc-user">
