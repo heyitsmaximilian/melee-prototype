@@ -1144,7 +1144,7 @@
     right: 8%;
     top: 54%;
     transform: translateY(-50%);
-    width: 460px;
+    width: 480px;
     height: 500px;
     z-index: 1;
     display: flex;
@@ -1155,7 +1155,7 @@
   .carousel-track {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 480px;
   }
 
   .carousel-slide {
@@ -1190,8 +1190,8 @@
   }
 
   .video-container {
-    width: 420px;
-    height: 460px;
+    width: 100%;
+    aspect-ratio: 3 / 2;
     border-radius: 20px;
     background: var(--surface);
     border: 1px solid var(--surface-border);
@@ -1733,10 +1733,6 @@
       <div class="carousel-slide" data-slide="1">
         <div class="slide-video">
           <div class="video-container">
-            <div class="video-badge">
-              <div class="badge-dot"></div>
-              <span>Product Demo</span>
-            </div>
             <video
               src="melee-teaser.mp4"
               playsinline
