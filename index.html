@@ -864,7 +864,7 @@
 
   /* ─── SECTION DIVIDER ─── */
   .section-divider {
-    max-width: var(--container-max);
+    max-width: calc(var(--container-max) + var(--container-padding) * 2);
     margin: 0 auto;
     padding: 0 var(--container-padding);
   }
@@ -876,7 +876,7 @@
 
   /* ─── SECTIONS ─── */
   .sections {
-    max-width: var(--container-max);
+    max-width: calc(var(--container-max) + var(--container-padding) * 2);
     margin: 0 auto;
     padding: 48px var(--container-padding) 80px;
     display: flex;
@@ -1143,7 +1143,7 @@
 
   /* ─── FOOTER ─── */
   .footer {
-    max-width: var(--container-max);
+    max-width: calc(var(--container-max) + var(--container-padding) * 2);
     margin: 0 auto;
     padding: 32px var(--container-padding) 48px;
     display: flex;
