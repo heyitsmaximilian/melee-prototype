@@ -332,16 +332,16 @@
   }
 
   .blob-orbit-1 {
-    width: 640px;
-    height: 640px;
+    width: 540px;
+    height: 540px;
     transform: translate(-50%, -50%) rotate(20deg);
     animation: orbitRotate 30s linear infinite;
     border-color: var(--orbit-ring);
   }
 
   .blob-orbit-2 {
-    width: 580px;
-    height: 580px;
+    width: 490px;
+    height: 490px;
     transform: translate(-50%, -50%) rotate(-10deg);
     animation: orbitRotate 25s linear infinite reverse;
     border-color: rgba(184, 255, 0, 0.03);
@@ -374,24 +374,24 @@
 
   /* Outermost — soft atmospheric haze, fades heavily at edges */
   .blob-outer {
-    width: 680px;
-    height: 680px;
+    width: 580px;
+    height: 580px;
     transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse at 25% 25%, var(--blob-outer-1) 0%, transparent 45%),
-      radial-gradient(ellipse at 75% 55%, var(--blob-outer-2) 0%, transparent 40%),
-      radial-gradient(ellipse at 50% 85%, rgba(120, 60, 220, 0.1) 0%, transparent 35%),
-      radial-gradient(ellipse at 65% 20%, rgba(200, 100, 255, 0.08) 0%, transparent 40%);
+      radial-gradient(ellipse at 25% 25%, var(--blob-outer-1) 0%, transparent 38%),
+      radial-gradient(ellipse at 75% 55%, var(--blob-outer-2) 0%, transparent 33%),
+      radial-gradient(ellipse at 50% 85%, rgba(120, 60, 220, 0.08) 0%, transparent 30%),
+      radial-gradient(ellipse at 65% 20%, rgba(200, 100, 255, 0.06) 0%, transparent 33%);
     border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
     animation: morph1 12s ease-in-out infinite;
-    filter: blur(12px);
-    opacity: 0.7;
+    filter: blur(16px);
+    opacity: 0.5;
   }
 
   /* Mid layer — denser, more saturated with color variation */
   .blob-mid {
-    width: 480px;
-    height: 480px;
+    width: 410px;
+    height: 410px;
     transform: translate(-50%, -50%);
     background:
       radial-gradient(ellipse at 55% 30%, var(--blob-mid-1) 0%, transparent 45%),
@@ -405,8 +405,8 @@
 
   /* Inner core — bright, concentrated */
   .blob-core {
-    width: 340px;
-    height: 340px;
+    width: 290px;
+    height: 290px;
     transform: translate(-50%, -50%);
     background:
       radial-gradient(ellipse at 45% 42%, var(--blob-core-1) 0%, var(--blob-core-2) 30%, transparent 55%),
@@ -418,8 +418,8 @@
 
   /* Hot spot — brightest center point */
   .blob-hotspot {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     transform: translate(-50%, -55%);
     background:
       radial-gradient(circle, var(--blob-hotspot) 0%, rgba(200, 170, 255, 0.15) 30%, transparent 55%);
@@ -483,9 +483,9 @@
   /* Noise texture overlay for depth */
   .blob-texture {
     position: absolute;
-    inset: -15%;
+    inset: -20%;
     border-radius: 50%;
-    opacity: 0.1;
+    opacity: 0.04;
     mix-blend-mode: overlay;
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 256px 256px;
@@ -1058,10 +1058,10 @@
   .hero-carousel {
     position: absolute;
     right: 4%;
-    top: 50%;
+    top: 52%;
     transform: translateY(-50%);
-    width: 600px;
-    height: 640px;
+    width: 540px;
+    height: 580px;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -1071,7 +1071,7 @@
   .carousel-track {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 540px;
   }
 
   .carousel-slide {
