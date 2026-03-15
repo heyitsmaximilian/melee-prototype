@@ -526,16 +526,25 @@
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 256px 256px;
     pointer-events: none;
-    animation: morphTexture 12s ease-in-out infinite;
+    animation: morphTexture 18s ease-in-out infinite;
   }
 
   @keyframes morphTexture {
-    0% { border-radius: 50%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.04; }
-    15% { border-radius: 44% 56% 53% 47% / 48% 43% 57% 52%; transform: scale(1.05) rotate(4deg); background-position: 50px -35px; opacity: 0.05; }
-    35% { border-radius: 53% 47% 43% 57% / 55% 48% 46% 50%; transform: scale(0.96) rotate(-3deg); background-position: -40px 55px; opacity: 0.035; }
-    55% { border-radius: 46% 54% 57% 43% / 43% 54% 48% 52%; transform: scale(1.06) rotate(5deg); background-position: 35px 45px; opacity: 0.055; }
-    75% { border-radius: 54% 46% 48% 52% / 50% 45% 55% 50%; transform: scale(0.97) rotate(-2deg); background-position: -30px -25px; opacity: 0.038; }
-    100% { border-radius: 50%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.04; }
+    0%   { border-radius: 42% 58% 55% 45% / 48% 40% 60% 52%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.04; }
+    7%   { border-radius: 55% 45% 38% 62% / 60% 44% 56% 40%; transform: scale(1.03) rotate(3deg); background-position: 30px -20px; opacity: 0.045; }
+    14%  { border-radius: 38% 62% 58% 42% / 42% 58% 38% 62%; transform: scale(0.98) rotate(-2deg); background-position: -25px 40px; opacity: 0.035; }
+    21%  { border-radius: 62% 38% 45% 55% / 55% 35% 65% 45%; transform: scale(1.04) rotate(5deg); background-position: 45px 15px; opacity: 0.05; }
+    28%  { border-radius: 45% 55% 62% 38% / 38% 62% 42% 58%; transform: scale(0.97) rotate(-4deg); background-position: -35px -30px; opacity: 0.038; }
+    35%  { border-radius: 58% 42% 35% 65% / 62% 45% 55% 38%; transform: scale(1.05) rotate(2deg); background-position: 20px 50px; opacity: 0.052; }
+    42%  { border-radius: 35% 65% 55% 45% / 45% 55% 35% 65%; transform: scale(0.96) rotate(-5deg); background-position: -50px 10px; opacity: 0.033; }
+    50%  { border-radius: 60% 40% 42% 58% / 52% 38% 62% 48%; transform: scale(1.02) rotate(4deg); background-position: 35px -45px; opacity: 0.048; }
+    57%  { border-radius: 40% 60% 65% 35% / 35% 60% 40% 60%; transform: scale(0.98) rotate(-3deg); background-position: -15px 35px; opacity: 0.036; }
+    64%  { border-radius: 56% 44% 38% 62% / 62% 42% 58% 38%; transform: scale(1.04) rotate(6deg); background-position: 50px 25px; opacity: 0.055; }
+    71%  { border-radius: 44% 56% 60% 40% / 40% 56% 44% 56%; transform: scale(0.97) rotate(-2deg); background-position: -40px -20px; opacity: 0.04; }
+    78%  { border-radius: 65% 35% 48% 52% / 55% 38% 62% 45%; transform: scale(1.03) rotate(3deg); background-position: 25px 40px; opacity: 0.05; }
+    85%  { border-radius: 38% 62% 52% 48% / 42% 62% 38% 58%; transform: scale(0.98) rotate(-5deg); background-position: -30px -40px; opacity: 0.035; }
+    92%  { border-radius: 52% 48% 40% 60% / 58% 44% 56% 42%; transform: scale(1.02) rotate(2deg); background-position: 15px -30px; opacity: 0.045; }
+    100% { border-radius: 42% 58% 55% 45% / 48% 40% 60% 52%; transform: scale(1) rotate(0deg); background-position: 0 0; opacity: 0.04; }
   }
 
   /* ─── SUMMARY CARD (floating inside blob) ─── */
