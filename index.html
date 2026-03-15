@@ -849,46 +849,6 @@
     box-shadow: 0 4px 32px rgba(139, 92, 246, 0.08);
   }
 
-  /* Slow ambient purple pulse — left side */
-  .checkin-card::before {
-    content: '';
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
-    pointer-events: none;
-    animation: checkinPulseLeft 5s ease-in-out infinite;
-  }
-
-  /* Second ambient pulse — right side, offset timing */
-  .checkin-card::after {
-    content: '';
-    position: absolute;
-    right: -40px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(184, 255, 0, 0.04) 0%, rgba(139, 92, 246, 0.06) 40%, transparent 70%);
-    pointer-events: none;
-    animation: checkinPulseRight 7s ease-in-out infinite;
-  }
-
-  @keyframes checkinPulseLeft {
-    0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
-    50% { opacity: 1; transform: translateY(-50%) scale(1.15); }
-  }
-
-  @keyframes checkinPulseRight {
-    0%, 100% { opacity: 0.4; transform: translateY(-50%) scale(1); }
-    50% { opacity: 0.8; transform: translateY(-50%) scale(1.1); }
-  }
-
   /* Border-tracing shimmer — goes around the full container */
   .checkin-shimmer {
     position: absolute;
@@ -1440,14 +1400,6 @@
 
   [data-theme="light"] nav::after {
     background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.2), transparent);
-  }
-
-  [data-theme="light"] .checkin-card::before {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
-  }
-
-  [data-theme="light"] .checkin-card::after {
-    background: radial-gradient(circle, rgba(72, 160, 30, 0.04) 0%, rgba(124, 58, 237, 0.04) 40%, transparent 70%);
   }
 
   [data-theme="light"] .checkin-streak {
