@@ -513,17 +513,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-1.5deg);
-    width: 280px;
+    width: 340px;
     z-index: 5;
     background: var(--card-bg);
     backdrop-filter: blur(40px) saturate(1.5);
     -webkit-backdrop-filter: blur(40px) saturate(1.5);
     border: 1px solid var(--card-border);
     border-radius: 18px;
-    padding: 24px 22px;
+    padding: 28px 26px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
     animation: cardFloat 6s ease-in-out infinite;
     box-shadow:
       0 12px 48px var(--shadow-color),
@@ -559,6 +559,26 @@
     background: rgba(139, 92, 246, 0.12);
     padding: 3px 8px;
     border-radius: 4px;
+  }
+
+  .summary-card .sc-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .summary-card .sc-subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: -8px;
+  }
+
+  .summary-card .sc-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2px 0;
   }
 
   .summary-card .sc-user {
@@ -606,7 +626,7 @@
 
   .summary-card .sc-stat-value {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
     color: var(--neon-green);
     letter-spacing: -0.5px;
@@ -1732,6 +1752,9 @@
             <div class="sc-header">
               <div class="sc-badge">Alpha Recap</div>
             </div>
+            <div class="sc-title">Your Alpha Season<br>Performance</div>
+            <div class="sc-subtitle">See how you stacked up against 10,000+ predictors</div>
+            <div class="sc-divider"></div>
             <div class="sc-user">
               <div class="sc-avatar">M</div>
               <div>
