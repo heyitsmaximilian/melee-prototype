@@ -1199,8 +1199,7 @@
     aspect-ratio: 3 / 2;
     border-radius: 20px;
     background: var(--surface);
-    border: 1.5px solid transparent;
-    background-clip: padding-box;
+    border: none;
     overflow: hidden;
     position: relative;
     box-shadow:
@@ -1208,13 +1207,12 @@
       0 0 80px rgba(139, 92, 246, 0.06);
   }
 
-  .video-container::after {
-    content: '';
-    position: absolute;
-    inset: -1.5px;
-    border-radius: 21px;
-    background: linear-gradient(135deg, var(--neon-purple), rgba(139, 92, 246, 0.4), var(--neon-green), rgba(184, 255, 0, 0.4), var(--neon-purple));
-    z-index: -1;
+  .video-border-wrap {
+    padding: 3px;
+    border-radius: 23px;
+    background: linear-gradient(135deg, var(--neon-purple), rgba(139, 92, 246, 0.5), var(--neon-green), rgba(184, 255, 0, 0.5), var(--neon-purple));
+    display: inline-block;
+    width: 100%;
   }
 
   .video-container::before {
@@ -1747,6 +1745,7 @@
       <!-- Slide 2: Video -->
       <div class="carousel-slide" data-slide="1">
         <div class="slide-video">
+          <div class="video-border-wrap">
           <div class="video-container">
             <video
               src="melee-teaser.mp4"
@@ -1755,6 +1754,7 @@
               preload="metadata"
               style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
             </video>
+          </div>
           </div>
         </div>
       </div>
