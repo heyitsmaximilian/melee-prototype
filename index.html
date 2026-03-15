@@ -869,22 +869,42 @@
     50% { opacity: 0.8; transform: translateY(-50%) scale(1.1); }
   }
 
-  /* Top-edge shimmer sweep */
+  /* Border-tracing shimmer — goes around the full container */
   .checkin-shimmer {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), rgba(184, 255, 0, 0.2), transparent);
-    animation: shimmerSweep 6s ease-in-out infinite;
+    inset: 0;
+    border-radius: 20px;
     pointer-events: none;
+    overflow: hidden;
   }
 
-  @keyframes shimmerSweep {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
+  .checkin-shimmer::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 260deg,
+      rgba(139, 92, 246, 0.5) 290deg,
+      rgba(184, 255, 0, 0.3) 310deg,
+      transparent 340deg,
+      transparent 360deg
+    );
+    animation: shimmerRotate 6s linear infinite;
+  }
+
+  .checkin-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    border-radius: 19px;
+    background: var(--surface);
+  }
+
+  @keyframes shimmerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   .checkin-left {
